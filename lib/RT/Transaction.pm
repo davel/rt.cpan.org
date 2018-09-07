@@ -1062,7 +1062,11 @@ sub BriefDescription {
         return $self->loc("Reminder '[_1]' completed", $ticket->Subject);
     
     
-    }
+    },
+    Munge => sub {
+        my $self = shift;
+        return "Attachment content modified";
+    },
 );
 
 
