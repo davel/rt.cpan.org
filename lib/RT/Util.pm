@@ -52,7 +52,7 @@ use warnings;
 
 
 use base 'Exporter';
-our @EXPORT = qw/safe_run_child mime_recommended_filename/;
+our @EXPORT = qw/safe_run_child mime_recommended_filename EmailContentTypes/;
 
 use Encode qw/encode/;
 
@@ -187,6 +187,20 @@ sub constant_time_eq {
     return 0 + not $result;
 }
 
+
+=head2 EmailContentTypes
+
+Return MIME types that indicate email messages.
+
+=cut
+
+sub EmailContentTypes {
+
+    # This is the same list of MIME types MIME::Parser uses. The partial and
+    # external-body types are unlikely to produce usable attachments, but they
+    # are still recognized as email for the purposes of this function.
+    return ( 'message/rfc822', 'message/partial', 'message/external-body' );
+}
 
 RT::Base->_ImportOverlays();
 
