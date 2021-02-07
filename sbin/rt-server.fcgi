@@ -1,4 +1,4 @@
-#!/home/rtcpan/perlbrew/perls/rt/bin/perl -w
+#!/usr/bin/perl -w
 # BEGIN BPS TAGGED BLOCK {{{
 #
 # COPYRIGHT:

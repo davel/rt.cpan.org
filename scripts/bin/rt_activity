@@ -1,4 +1,4 @@
-#!/home/rtcpan/perlbrew/perls/rt/bin/perl
+#!/usr/bin/perl
 use strict;
 use warnings;
 

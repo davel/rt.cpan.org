@@ -2,7 +2,7 @@
 MAILTO=
 RT=/home/rtcpan/rt
 RT_CPAN_ORG=/home/rtcpan/rt/local/plugins/RT-Extension-rt_cpan_org
-PERL="/home/rtcpan/perlbrew/perls/rt/bin/perl -I /home/rtcpan/rt/local/lib -I /home/rtcpan/rt/lib"
+PERL="/usr/bin/perl -I /home/rtcpan/rt/local/lib -I /home/rtcpan/rt/lib"
 
 05     *   *   *   *    rtcpan     $PERL $RT_CPAN_ORG/bin/rt-cpan-bugs-per-dists $RT_CPAN_ORG/html/Public/
 15   */2   *   *   *    rtcpan     /home/rtcpan/perlbrew/perls/rt/bin/cpan2rt update --mirror http://www.cpan.org --home $RT --datadir $RT/var/cpan2rt_data > /dev/null 2>&1

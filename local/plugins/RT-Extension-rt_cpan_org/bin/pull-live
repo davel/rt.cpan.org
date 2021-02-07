@@ -4,7 +4,7 @@ use Getopt::Long;
 
 my $rthome = $ENV{'RTHOME'} || "/home/rtcpan/rt";
 
-my $perlbrew_perl = "/home/rtcpan/perlbrew/perls/rt/bin/perl";
+my $perlbrew_perl = "/usr/bin/perl";
 my $perl =       $ENV{'PERL'} ?   $ENV{'PERL'} :
             -e $perlbrew_perl ? $perlbrew_perl :
                                            $^X ;
