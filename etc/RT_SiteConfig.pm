@@ -46,7 +46,6 @@ Set(@Plugins,
     "RT::Extension::rt_cpan_org",
 
     "RT::Authen::PAUSE",
-    "RT::Authen::Bitcard",
     "RT::Authen::OpenID",
     "RT::Authen::OAuth2",
 
