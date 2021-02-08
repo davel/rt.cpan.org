@@ -2,8 +2,8 @@ my $DEV = $ENV{PLACK_ENV} =~ /dev/i ? 1 : 0;
 
 Set( $rtname, 'rt.cpan.org' );
 
-Set($DatabaseHost, '');
-Set($DatabaseRTHost, 'localhost');
+Set($DatabaseHost, 'dbhost');
+Set($DatabaseRTHost, 'dbhost');
 Set($DatabaseUser, 'rt_user');
 Set($DatabasePassword, 'password');
 Set($DatabaseName, 'rt_cpan_org');
