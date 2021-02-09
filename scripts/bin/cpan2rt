@@ -59,6 +59,9 @@ option to force the action.
 use strict;
 use warnings;
 
+use FindBin;
+use lib "$FindBin::Bin/../lib";
+
 use CPAN2RT;
 
 our $DEBUG = 0;
