@@ -58,13 +58,7 @@ Set(@Plugins,
     "RT::Extension::QuickDelete",
     "RT::Extension::CustomizeContentType",
 
-    "RTx::GoogleAnalytics",
     "RTx::RemoteLinks",
-);
-
-Set(%GoogleAnalytics,
-    TrackingID  => '',
-    Method      => 'universal',
 );
 
 Set($JSMinPath, "/home/rtcpan/rt/bin/jsmin");
