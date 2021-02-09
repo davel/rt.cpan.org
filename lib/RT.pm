@@ -379,6 +379,8 @@ sub InitSignalHandlers {
 ## mechanism (see above).
 
     $SIG{__WARN__} = sub {
+        return 'IGNORE' if $_[0] and $_[0] =~ /^Code point \S+ is not Unicode, may not be portable/;
+
         # The 'wide character' warnings has to be silenced for now, at least
         # until HTML::Mason offers a sane way to process both raw output and
         # unicode strings.

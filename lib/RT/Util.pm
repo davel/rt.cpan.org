@@ -52,7 +52,7 @@ use warnings;
 
 
 use base 'Exporter';
-our @EXPORT = qw/safe_run_child mime_recommended_filename EmailContentTypes/;
+our @EXPORT = qw/safe_run_child mime_recommended_filename EntityLooksLikeEmailMessage EmailContentTypes/;
 
 use Encode qw/encode/;
 
@@ -187,6 +187,26 @@ sub constant_time_eq {
     return 0 + not $result;
 }
 
+=head2 EntityLooksLikeEmailMessage( MIME::Entity )
+
+Check MIME type headers for entities that look like email.
+
+=cut
+
+sub EntityLooksLikeEmailMessage {
+    my $entity = shift;
+
+    return unless $entity;
+
+    # Use mime_type instead of effective_type to get the same headers
+    # MIME::Parser used.
+    my $mime_type = $entity->mime_type();
+
+    my @email_types = EmailContentTypes();
+
+    return 1 if grep { $mime_type eq $_ } @email_types;
+    return 0;
+}
 
 =head2 EmailContentTypes
 
