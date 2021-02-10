@@ -1,5 +1,7 @@
 my $hostname = $ENV{RT_HOSTNAME};
 
+my $rt_port  = $ENV{RT_PORT} || 80;
+
 Set( $rtname, "$hostname" );
 
 Set($DatabaseHost, 'dbhost');
@@ -13,8 +15,10 @@ Set( $LogToScreen, $ENV{RT_LOG_LEVEL} || ($DEV ? "info" : undef) );
 Set( $LogToFile, "warn" );
 Set( $LogStackTraces, "crit" );
 
-Set( $WebDomain, $DEV ? 'localhost' : $hostname);
-Set( $WebPort,   $DEV ? 8008        : 443 );
+Set( $WebDomain, $hostname);
+
+
+Set( $WebPort, $rt_port);
 Set( $CanonicalizeRedirectURLs, 1 );
 
 Set($SetOutgoingMailFrom, 'rt-cpan-org-return@perl.org');
