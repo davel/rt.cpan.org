@@ -1,7 +1,9 @@
 # This is an RT configuration file, loaded when the RT::Extension::rt_cpan_org
 # plugin is loaded.
 
-Set( $Organization, "rt.cpan.org" );
+my $hostname = $ENV{RT_HOSTNAME};
+
+Set( $Organization, $hostname );
 
 # Logo
 Set( $LogoURL, '/NoAuth/images/cpan.png' );
@@ -18,8 +20,8 @@ Set( $AutocompleteOwnersForSearch, 1 );
 Set( $UsernameFormat, 'public' );
 
 # Email defaults; queues get their own dynamic addresses too
-Set( $CorrespondAddress, 'bugs@rt.cpan.org' );
-Set( $CommentAddress,    'comments@rt.cpan.org' );
+Set( $CorrespondAddress, "bugs\@$hostname" );
+Set( $CommentAddress,    "comments\@$hostname" );
 
 # The old $rtname used to be "cpan"; accept it.
 # See also BugTracker_Config.pm which extends this variable.

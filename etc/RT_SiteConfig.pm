@@ -1,6 +1,6 @@
-my $DEV = $ENV{PLACK_ENV} =~ /dev/i ? 1 : 0;
+my $hostname = $ENV{RT_HOSTNAME};
 
-Set( $rtname, 'rt.cpan.org' );
+Set( $rtname, "$hostname" );
 
 Set($DatabaseHost, 'dbhost');
 Set($DatabaseRTHost, 'dbhost');
@@ -13,7 +13,7 @@ Set( $LogToScreen, $ENV{RT_LOG_LEVEL} || ($DEV ? "info" : undef) );
 Set( $LogToFile, "warn" );
 Set( $LogStackTraces, "crit" );
 
-Set( $WebDomain, $DEV ? 'localhost' : 'rt.cpan.org');
+Set( $WebDomain, $DEV ? 'localhost' : $hostname);
 Set( $WebPort,   $DEV ? 8008        : 443 );
 Set( $CanonicalizeRedirectURLs, 1 );
 
