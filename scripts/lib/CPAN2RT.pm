@@ -1061,7 +1061,7 @@ sub end_element {
 
     if ( $name eq 'cpanid' ) {
         $self->{inside} = 0;
-        my %rec = map Encode::decode_utf8($_), @{ delete $self->{'tmp'} };
+        my %rec = @{ delete $self->{'tmp'} };
         $self->{'res'}{ delete $rec{'id'} } = \%rec;
     }
 }
