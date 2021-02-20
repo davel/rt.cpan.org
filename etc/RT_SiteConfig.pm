@@ -4,8 +4,8 @@ my $rt_port  = $ENV{RT_PORT} || 80;
 
 Set( $rtname, "$hostname" );
 
-Set($DatabaseHost, 'rt-database');
-Set($DatabaseRTHost, 'rt-database');
+Set($DatabaseHost,   $ENV{RT_DATABASE_SERVICE_HOST} || 'rt-database');
+Set($DatabaseRTHost, $ENV{RT_DATABASE_SERVICE_HOST} || 'rt-database');
 Set($DatabaseUser, 'rt_user');
 Set($DatabasePassword, $ENV{RT_MYSQL_PASSWORD});
 Set($DatabaseName, 'rt_cpan_org');
@@ -22,7 +22,7 @@ Set( $WebDomain, $hostname);
 Set( $WebPort, $rt_port);
 Set( $CanonicalizeRedirectURLs, 1 );
 
-Set($SetOutgoingMailFrom, 'rt-cpan-org-return@perl.org');
+Set($SetOutgoingMailFrom, $ENV{RT_OUTGOING_EMAIL_ADDRESS} // 'rt-cpan-org-return@perl.org');
 
 Set( %Bitcard,
     Token          => ($DEV
