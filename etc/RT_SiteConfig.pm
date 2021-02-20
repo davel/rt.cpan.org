@@ -7,7 +7,7 @@ Set( $rtname, "$hostname" );
 Set($DatabaseHost, 'rt-database');
 Set($DatabaseRTHost, 'rt-database');
 Set($DatabaseUser, 'rt_user');
-Set($DatabasePassword, 'password');
+Set($DatabasePassword, $ENV{RT_MYSQL_PASSWORD});
 Set($DatabaseName, 'rt_cpan_org');
 
 Set( $LogToSyslog, undef );
