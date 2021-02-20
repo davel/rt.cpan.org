@@ -4,8 +4,8 @@ my $rt_port  = $ENV{RT_PORT} || 80;
 
 Set( $rtname, "$hostname" );
 
-Set($DatabaseHost, 'dbhost');
-Set($DatabaseRTHost, 'dbhost');
+Set($DatabaseHost, 'rt-database');
+Set($DatabaseRTHost, 'rt-database');
 Set($DatabaseUser, 'rt_user');
 Set($DatabasePassword, 'password');
 Set($DatabaseName, 'rt_cpan_org');
