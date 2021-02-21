@@ -16,8 +16,8 @@
 
 <h2>... report a bug in a module using web-interface?</h2>
 <p>
-  Use <a href="https://www.bitcard.org/">Bitcard</a> or OpenID account.
-  Module authors can use PAUSE credentials.
+  Use an OpenID account,
+  module authors can use PAUSE credentials.
 </p>
 
 <h2>... report a bug in a module using email?</h2>
