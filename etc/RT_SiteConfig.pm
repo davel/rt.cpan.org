@@ -13,7 +13,6 @@ Set($DatabaseName, 'rt_cpan_org');
 Set( $LogToSyslog, undef );
 Set( $LogToScreen, $ENV{RT_LOG_LEVEL} || ($DEV ? "info" : undef) );
 Set( $LogToFile, "warn" );
-Set( $LogToFileNamed, "/dev/fd/2");
 Set( $LogStackTraces, "crit" );
 
 Set( $WebDomain, $hostname);
