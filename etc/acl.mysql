@@ -17,7 +17,7 @@ sub acl {
     return (
         "GRANT SELECT,INSERT,CREATE,INDEX,UPDATE,DELETE
                ON `$db_name`.*
-               TO '$db_user'\@'$db_rthost'
+               TO '$db_user'\@'%'
                IDENTIFIED BY '$db_pass';",
     );
 }
