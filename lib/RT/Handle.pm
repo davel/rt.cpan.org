@@ -122,6 +122,7 @@ sub Connect {
         my $version = $self->DatabaseVersion;
         ($version) = $version =~ /^(\d+\.\d+)/;
         $self->dbh->do("SET NAMES 'utf8'") if $version >= 4.1;
+        $self->dbh->do("SET NAMES 'utf8mb4'") if $version >= 5;
     }
 
 
